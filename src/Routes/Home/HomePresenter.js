@@ -29,13 +29,12 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
     </Container>
   );
 
-
 HomePresenter.propTypes = {
-    nowPlaying: PropTypes.array,
-    popular: PropTypes.array,
-    upcoming: PropTypes.array,
-    loading: PropTypes.bool.isRequired,
-    error: PropTypes.string,
-}
+  nowPlaying: PropTypes.array,
+  popular: PropTypes.array,
+  upcoming: PropTypes.array,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.string
+};
 
 export default HomePresenter;
