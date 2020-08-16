@@ -50,4 +50,4 @@ export default withRouter(({ location: { pathname } }) => (
         </Item>
       </List>
     </Header>
-  ));
+));
