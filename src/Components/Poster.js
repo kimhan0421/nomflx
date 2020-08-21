@@ -3,17 +3,49 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Container= styled.div``;
+const Container= styled.div`
+  font-size: 12px;
+`;
 
-const ImageContainer = styled.div``;
+const Image = styled.div`
+  background-image: url(${props => props.bgUrl});
+  height: 180px;
+  background-size: cover;
+  border-radius: 4px;
+  background-position: center center;
+  transition: opacity 0.1s linear;
+`;
 
-const Image = styled.div``;
+const ImageContainer = styled.div`
+  margin-bottom: 5px;
+  &:hover {
+    ${Image} {
+      opacity: 0.3;
+    }
+    ${Rating} {
+      opacity: 1;
+    }
+  }
+`;
 
-const Rating = styled.span``;
 
-const Title = styled.span``;
+const Rating = styled.span`
+  bottom: 5px;
+  right: 5px; //이미지의 오른쪽에 별 고정
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+`;
 
-const Year = styled.span``;
+const Title = styled.span`
+  display:block;
+  margin-bottom: 3px;
+`;
+
+const Year = styled.span`
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+`;
 
 const Poster = ({id, imageUrl, title, rating, year, isMovie=false}) =>(
     <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
@@ -23,7 +55,7 @@ const Poster = ({id, imageUrl, title, rating, year, isMovie=false}) =>(
         <Rating>
           <span role="img" aria-label="rating">
             ⭐️
-          </span>{" "}
+          </span>{" "} 
           {rating}/10
         </Rating>
       </ImageContainer>
